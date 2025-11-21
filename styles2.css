@@ -16,9 +16,9 @@ aside img {
     "aside"
     "main"
     "footer";
-    grid-template-columns: 1fr;
     grid-template-rows: 32rem 4rem 1fr 4rem;
 }
+
 header {
     grid-area: header;
     padding: 0.7rem;
@@ -32,14 +32,18 @@ header p {
     display: flex;
     justify-content: center;
 }
-header img {
+.capa img {
     width: 25rem;
-
 }
 .part1 {
     display: flex;
     flex-direction: column;
     text-align: center;
+  
+}
+
+.part1 img {
+    width: 2rem;
 }
 p {
     margin: 0;  
@@ -47,13 +51,14 @@ p {
 .forte{
     font-weight:bold;
 }
+.sublinhar {
+    text-decoration: underline #da048b;}
 .mudar{
     color:#da048b;
     background: white;
 }
 aside {
     grid-area: aside;
-    padding: 1.7rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -73,11 +78,18 @@ aside {
     align-items: center;
     justify-content: center;
     border-radius: 50%;
+    margin: 1rem;
 
 }
 .opcao img {
     width: 2rem;
     height: auto;
+}
+.opcao:hover img {
+    filter: invert(100%)
+}
+.opcao {
+    font-size: 0.8rem;
 }
 main {
     grid-area: main;
@@ -104,7 +116,7 @@ main img {
 .grade {
     padding: 1rem;  
     display: grid;
-    grid-template-columns: 6rem 1fr;
+    grid-template-columns: 5rem 1fr;
     grid-template-rows: 15rem 16rem 15rem;
 }
 .grade img {
@@ -128,14 +140,57 @@ footer {
 
 }
 @media(min-width: 768px) {
+    .container {
+        grid-template-areas: 
+        "aside header"
+        "aside main"
+        "aside footer";
+        grid-template-columns: 7rem 1fr;
+        grid-template-rows: 30rem 1fr;
+    }
     header {
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr;
         height: 10rem;
         align-items: center;
-        padding: 2rem;
+        padding: 0;
+    }
+    .arrow {
+    display: flex;
+    width: 40rem;
+    justify-content: right;
+    }
+    .part1 img {
+        width: 4rem;
+    }
+    .capa img {
+        width: 30rem;
+    }
+    aside{
+        width: 100%;
+        height: 100%;
+        padding: 0.5rem;
+        align-items: start;
+
+    }
+    .lista {
+        grid-template-rows: 10rem 10rem 10rem 10rem;
+        grid-template-columns: 1fr;
+        margin: 1rem;
     }
     main {
-        background: #0e03a8;
+        padding: 2rem;
+    }
+    main img {
+        width: 17rem;
+    } 
+}
+@media (min-width: 1024px) {
+    header { 
+        height: 35rem;
+        grid-template-columns: 1fr 1fr;
+    }
+    header p {
+        font-size: 3rem;
     }
 }
